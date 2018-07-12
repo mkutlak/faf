@@ -1,0 +1,454 @@
+/*
+    Custom changes for FAF
+    patternfly.css
+*/
+.btn-primary {
+  background-color: #34609f;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+  background-color: #274979;
+}
+.btn-primary:hover {
+  background-color: #274979;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  background-color: #274979;
+}
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary.focus {
+  background-color: #1f395e;
+}
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus {
+  background-color: #34609f;
+}
+.btn-primary .badge {
+  color: #34609f;
+}
+.btn-primary {
+  background-color: #34609f;
+  background-image: linear-gradient(to bottom, #3474d0 0%, #2a63b4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3474d0', endColorstr='#ff2a63b4', GradientType=0);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-color: #34609f;
+}
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open .dropdown-toggle.btn-primary.focus {
+  background-color: #2e548c;
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: #34609f;
+}
+.table-striped > thead > tr:nth-of-type(even),
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: transparent;
+}
+.table-striped > thead > tr:nth-of-type(odd),
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f5f5f5;
+}
+
+/*
+    patternfly-additions.css
+*/
+.datepicker table tr td.active,
+.datepicker table tr td.active.highlighted {
+  background-color: #34609f;
+}
+.datepicker table tr td.active:focus,
+.datepicker table tr td.active.highlighted:focus,
+.datepicker table tr td.active.focus,
+.datepicker table tr td.active.highlighted.focus {
+  background-color: #274979;
+}
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active.highlighted:hover {
+  background-color: #274979;
+}
+.datepicker table tr td.active:active,
+.datepicker table tr td.active.highlighted:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.highlighted.active,
+.open > .dropdown-toggle.datepicker table tr td.active,
+.open > .dropdown-toggle.datepicker table tr td.active.highlighted {
+  background-color: #274979;
+}
+.datepicker table tr td.active:active:hover,
+.datepicker table tr td.active.highlighted:active:hover,
+.datepicker table tr td.active.active:hover,
+.datepicker table tr td.active.highlighted.active:hover,
+.open > .dropdown-toggle.datepicker table tr td.active:hover,
+.open > .dropdown-toggle.datepicker table tr td.active.highlighted:hover,
+.datepicker table tr td.active:active:focus,
+.datepicker table tr td.active.highlighted:active:focus,
+.datepicker table tr td.active.active:focus,
+.datepicker table tr td.active.highlighted.active:focus,
+.open > .dropdown-toggle.datepicker table tr td.active:focus,
+.open > .dropdown-toggle.datepicker table tr td.active.highlighted:focus,
+.datepicker table tr td.active:active.focus,
+.datepicker table tr td.active.highlighted:active.focus,
+.datepicker table tr td.active.active.focus,
+.datepicker table tr td.active.highlighted.active.focus,
+.open > .dropdown-toggle.datepicker table tr td.active.focus,
+.open > .dropdown-toggle.datepicker table tr td.active.highlighted.focus {
+  background-color: #1f395e;
+}
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.highlighted.disabled:hover,
+.datepicker table tr td.active[disabled]:hover,
+.datepicker table tr td.active.highlighted[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.active:hover,
+fieldset[disabled] .datepicker table tr td.active.highlighted:hover,
+.datepicker table tr td.active.disabled:focus,
+.datepicker table tr td.active.highlighted.disabled:focus,
+.datepicker table tr td.active[disabled]:focus,
+.datepicker table tr td.active.highlighted[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.active:focus,
+fieldset[disabled] .datepicker table tr td.active.highlighted:focus,
+.datepicker table tr td.active.disabled.focus,
+.datepicker table tr td.active.highlighted.disabled.focus,
+.datepicker table tr td.active[disabled].focus,
+.datepicker table tr td.active.highlighted[disabled].focus,
+fieldset[disabled] .datepicker table tr td.active.focus,
+fieldset[disabled] .datepicker table tr td.active.highlighted.focus {
+  background-color: #34609f;
+}
+.datepicker table tr td.active .badge,
+.datepicker table tr td.active.highlighted .badge {
+  color: #34609f;
+}
+.datepicker table tr td span.active,
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active.disabled:hover {
+  background-color: #34609f;
+}
+.datepicker table tr td span.active:focus,
+.datepicker table tr td span.active:hover:focus,
+.datepicker table tr td span.active.disabled:focus,
+.datepicker table tr td span.active.disabled:hover:focus,
+.datepicker table tr td span.active.focus,
+.datepicker table tr td span.active:hover.focus,
+.datepicker table tr td span.active.disabled.focus,
+.datepicker table tr td span.active.disabled:hover.focus {
+  background-color: #274979;
+}
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active:hover:hover,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active.disabled:hover:hover {
+  background-color: #274979;
+}
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:hover.active,
+.open > .dropdown-toggle.datepicker table tr td span.active,
+.open > .dropdown-toggle.datepicker table tr td span.active:hover,
+.open > .dropdown-toggle.datepicker table tr td span.active.disabled,
+.open > .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
+  background-color: #274979;
+}
+.datepicker table tr td span.active:active:hover,
+.datepicker table tr td span.active:hover:active:hover,
+.datepicker table tr td span.active.disabled:active:hover,
+.datepicker table tr td span.active.disabled:hover:active:hover,
+.datepicker table tr td span.active.active:hover,
+.datepicker table tr td span.active:hover.active:hover,
+.datepicker table tr td span.active.disabled.active:hover,
+.datepicker table tr td span.active.disabled:hover.active:hover,
+.open > .dropdown-toggle.datepicker table tr td span.active:hover,
+.open > .dropdown-toggle.datepicker table tr td span.active:hover:hover,
+.open > .dropdown-toggle.datepicker table tr td span.active.disabled:hover,
+.open > .dropdown-toggle.datepicker table tr td span.active.disabled:hover:hover,
+.datepicker table tr td span.active:active:focus,
+.datepicker table tr td span.active:hover:active:focus,
+.datepicker table tr td span.active.disabled:active:focus,
+.datepicker table tr td span.active.disabled:hover:active:focus,
+.datepicker table tr td span.active.active:focus,
+.datepicker table tr td span.active:hover.active:focus,
+.datepicker table tr td span.active.disabled.active:focus,
+.datepicker table tr td span.active.disabled:hover.active:focus,
+.open > .dropdown-toggle.datepicker table tr td span.active:focus,
+.open > .dropdown-toggle.datepicker table tr td span.active:hover:focus,
+.open > .dropdown-toggle.datepicker table tr td span.active.disabled:focus,
+.open > .dropdown-toggle.datepicker table tr td span.active.disabled:hover:focus,
+.datepicker table tr td span.active:active.focus,
+.datepicker table tr td span.active:hover:active.focus,
+.datepicker table tr td span.active.disabled:active.focus,
+.datepicker table tr td span.active.disabled:hover:active.focus,
+.datepicker table tr td span.active.active.focus,
+.datepicker table tr td span.active:hover.active.focus,
+.datepicker table tr td span.active.disabled.active.focus,
+.datepicker table tr td span.active.disabled:hover.active.focus,
+.open > .dropdown-toggle.datepicker table tr td span.active.focus,
+.open > .dropdown-toggle.datepicker table tr td span.active:hover.focus,
+.open > .dropdown-toggle.datepicker table tr td span.active.disabled.focus,
+.open > .dropdown-toggle.datepicker table tr td span.active.disabled:hover.focus {
+  background-color: #1f395e;
+}
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active:hover.disabled:hover,
+.datepicker table tr td span.active.disabled.disabled:hover,
+.datepicker table tr td span.active.disabled:hover.disabled:hover,
+.datepicker table tr td span.active[disabled]:hover,
+.datepicker table tr td span.active:hover[disabled]:hover,
+.datepicker table tr td span.active.disabled[disabled]:hover,
+.datepicker table tr td span.active.disabled:hover[disabled]:hover,
+fieldset[disabled] .datepicker table tr td span.active:hover,
+fieldset[disabled] .datepicker table tr td span.active:hover:hover,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover:hover,
+.datepicker table tr td span.active.disabled:focus,
+.datepicker table tr td span.active:hover.disabled:focus,
+.datepicker table tr td span.active.disabled.disabled:focus,
+.datepicker table tr td span.active.disabled:hover.disabled:focus,
+.datepicker table tr td span.active[disabled]:focus,
+.datepicker table tr td span.active:hover[disabled]:focus,
+.datepicker table tr td span.active.disabled[disabled]:focus,
+.datepicker table tr td span.active.disabled:hover[disabled]:focus,
+fieldset[disabled] .datepicker table tr td span.active:focus,
+fieldset[disabled] .datepicker table tr td span.active:hover:focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled:focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover:focus,
+.datepicker table tr td span.active.disabled.focus,
+.datepicker table tr td span.active:hover.disabled.focus,
+.datepicker table tr td span.active.disabled.disabled.focus,
+.datepicker table tr td span.active.disabled:hover.disabled.focus,
+.datepicker table tr td span.active[disabled].focus,
+.datepicker table tr td span.active:hover[disabled].focus,
+.datepicker table tr td span.active.disabled[disabled].focus,
+.datepicker table tr td span.active.disabled:hover[disabled].focus,
+fieldset[disabled] .datepicker table tr td span.active.focus,
+fieldset[disabled] .datepicker table tr td span.active:hover.focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled.focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover.focus {
+  background-color: #34609f;
+}
+.datepicker table tr td span.active .badge,
+.datepicker table tr td span.active:hover .badge,
+.datepicker table tr td span.active.disabled .badge,
+.datepicker table tr td span.active.disabled:hover .badge {
+  color: #34609f;
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
+  background: #34609f;
+}
+.bootstrap-datetimepicker-widget table td.today:before {
+  border-bottom-color: #34609f;
+}
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+  background-color: #34609f;
+}
+.bootstrap-datetimepicker-widget table td span.active {
+  background-color: #34609f;
+}
+.navbar-pf .navbar-utility .applauncher-pf.open > .dropdown-toggle,
+.navbar-pf-alt .navbar-utility .applauncher-pf.open > .dropdown-toggle,
+.navbar-pf .applauncher-pf.open > .dropdown-toggle,
+.navbar-pf-alt .applauncher-pf.open > .dropdown-toggle,
+.navbar-pf .navbar-utility .applauncher-pf.open > .dropdown-toggle:focus,
+.navbar-pf-alt .navbar-utility .applauncher-pf.open > .dropdown-toggle:focus,
+.navbar-pf .applauncher-pf.open > .dropdown-toggle:focus,
+.navbar-pf-alt .applauncher-pf.open > .dropdown-toggle:focus {
+  background-color: #2557a0;
+}
+@media (min-width: 768px) {
+  .navbar-pf .navbar-utility .applauncher-pf.open > .dropdown-toggle,
+  .navbar-pf-alt .navbar-utility .applauncher-pf.open > .dropdown-toggle,
+  .navbar-pf .applauncher-pf.open > .dropdown-toggle,
+  .navbar-pf-alt .applauncher-pf.open > .dropdown-toggle,
+  .navbar-pf .navbar-utility .applauncher-pf.open > .dropdown-toggle:focus,
+  .navbar-pf-alt .navbar-utility .applauncher-pf.open > .dropdown-toggle:focus,
+  .navbar-pf .applauncher-pf.open > .dropdown-toggle:focus,
+  .navbar-pf-alt .applauncher-pf.open > .dropdown-toggle:focus {
+    background-color: #2c68bf;
+    border-color: #5987c9;
+    color: #dfdfdf;
+  }
+}
+@media (min-width: 768px) {
+  .navbar-pf .navbar-utility .applauncher-pf.dropdown > .dropdown-toggle,
+  .navbar-pf-alt .navbar-utility .applauncher-pf.dropdown > .dropdown-toggle,
+  .navbar-pf .applauncher-pf.dropdown > .dropdown-toggle,
+  .navbar-pf-alt .applauncher-pf.dropdown > .dropdown-toggle,
+  .navbar-pf .navbar-utility .applauncher-pf .dropdown-toggle,
+  .navbar-pf-alt .navbar-utility .applauncher-pf .dropdown-toggle,
+  .navbar-pf .applauncher-pf .dropdown-toggle,
+  .navbar-pf-alt .applauncher-pf .dropdown-toggle {
+    border-left: 1px solid #5987c9;
+  }
+}
+.contextselector-pf .dropdown.open,
+.contextselector-pf .dropdown:hover {
+  background-color: #2a63b4;
+}
+.navbar-pf {
+  background: #34609f;
+}
+.navbar-pf .navbar-brand:hover,
+.navbar-pf .navbar-brand:focus {
+  color: #f5f5f5;
+}
+.navbar-pf .navbar-header {
+  border-bottom: 1px solid #275daa;
+}
+.navbar-pf .navbar-nav > li > a,
+.navbar-pf .navbar-nav > li > button {
+  color: #dfdfdf;
+}
+.navbar-pf .navbar-nav .badge.badge-pf-bordered {
+  border: 1px solid #34609f;
+}
+@media (max-width: 767px) {
+  .navbar-pf .navbar-nav .active .dropdown-menu,
+  .navbar-pf .navbar-nav .active .navbar-persistent,
+  .navbar-pf .navbar-nav .open .dropdown-menu {
+    background-color: #214d8d !important;
+  }
+  .navbar-pf .navbar-nav .active .dropdown-menu > li > a,
+  .navbar-pf .navbar-nav .active .navbar-persistent > li > a,
+  .navbar-pf .navbar-nav .open .dropdown-menu > li > a {
+    color: #dfdfdf;
+  }
+  .navbar-pf .navbar-nav .active .dropdown-menu .divider,
+  .navbar-pf .navbar-nav .active .navbar-persistent .divider,
+  .navbar-pf .navbar-nav .open .dropdown-menu .divider {
+    background-color: #275daa;
+  }
+}
+.navbar-pf .navbar-primary .context {
+  border-bottom: 1px solid #275daa;
+}
+.navbar-pf .navbar-utility {
+  border-bottom: 1px solid #275daa;
+}
+@media (max-width: 767px) {
+  .navbar-pf .navbar-utility > li + li {
+    border-top: 1px solid #275daa;
+  }
+}
+@media (min-width: 768px) {
+  .navbar-pf .navbar-primary {
+    background-image: linear-gradient(to bottom, #235295 0%, #193b6c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff235295', endColorstr='#ff193b6c', GradientType=0);
+  }
+  .navbar-pf .navbar-primary > li > a:hover,
+  .navbar-pf .navbar-primary > li > button:hover {
+    border-top-color: #5e91da;
+    color: #dfdfdf;
+    background-image: linear-gradient(to bottom, #2c68bf 0%, #235295 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2c68bf', endColorstr='#ff235295', GradientType=0);
+  }
+  .navbar-pf .navbar-primary > .active > a,
+  .navbar-pf .navbar-primary .open > a,
+  .navbar-pf .navbar-primary > .active > button,
+  .navbar-pf .navbar-primary .open > button,
+  .navbar-pf .navbar-primary > .active > a:hover,
+  .navbar-pf .navbar-primary .open > a:hover,
+  .navbar-pf .navbar-primary > .active > button:hover,
+  .navbar-pf .navbar-primary .open > button:hover,
+  .navbar-pf .navbar-primary > .active > a:focus,
+  .navbar-pf .navbar-primary .open > a:focus,
+  .navbar-pf .navbar-primary > .active > button:focus,
+  .navbar-pf .navbar-primary .open > button:focus {
+    border-bottom-color: #2a63b4;
+    border-top-color: #739fde;
+    background-image: linear-gradient(to bottom, #3474d0 0%, #2a63b4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3474d0', endColorstr='#ff2a63b4', GradientType=0);
+  }
+  .navbar-pf .navbar-primary li.context > a,
+  .navbar-pf .navbar-primary li.context.context-bootstrap-select {
+    background-color: #24549a;
+    border-bottom-color: #2f6fcb;
+    border-right: 1px solid #2f6fcb;
+    border-top-color: #2e6dc7;
+    background-image: linear-gradient(to bottom, #2b65b9 0%, #24549a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2b65b9', endColorstr='#ff24549a', GradientType=0);
+  }
+  .navbar-pf .navbar-primary li.context > a:hover,
+  .navbar-pf .navbar-primary li.context.context-bootstrap-select:hover {
+    background-color: #2b65b9;
+    border-bottom-color: #417dd3;
+    border-right-color: #417dd3;
+    border-top-color: #417dd3;
+    background-image: linear-gradient(to bottom, #3070cd 0%, #2b65b9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3070cd', endColorstr='#ff2b65b9', GradientType=0);
+  }
+  .navbar-pf .navbar-primary li.context.open > a {
+    background-color: #3977d1;
+    border-bottom-color: #568bd8;
+    border-right-color: #568bd8;
+    border-top-color: #5a8ed9;
+    background-image: linear-gradient(to bottom, #437ed3 0%, #3977d1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff437ed3', endColorstr='#ff3977d1', GradientType=0);
+  }
+  .navbar-pf .navbar-utility > li > a,
+  .navbar-pf .navbar-utility > li > button {
+    color: #dfdfdf !important;
+  }
+  .navbar-pf .navbar-utility > li > a:hover,
+  .navbar-pf .navbar-utility > li > button:hover {
+    border-left-color: #6c95cf;
+  }
+  .navbar-pf .navbar-utility > li.open > a,
+  .navbar-pf .navbar-utility > li.open > button {
+    border-left-color: #80a3d5;
+  }
+}
+.navbar-pf-vertical .nav .drawer-pf-trigger .drawer-pf-trigger-icon {
+  border-left: 1px solid #5987c9;
+  border-right: 1px solid #5987c9;
+}
+.navbar-pf-vertical .nav .drawer-pf-trigger.open .drawer-pf-trigger-icon {
+  background-color: #2557a0;
+}
