@@ -15,10 +15,7 @@ Problem #{{ problem.id }} -
 {% endblock %}
 
 {% block js %}
-<script src="{{ url_for('static', filename='js/jquery.flot.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.flot.pie.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.flot.tickrotor.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.flot.time.js')}}"></script>
+<script src="{{ url_for('static', filename='js/jquery.flot.min.js')}}"></script>
 <script type="text/javascript">
   $(document).ready(function() {
     try {

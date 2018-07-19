@@ -1,0 +1,220 @@
+body {
+  color: #000;
+}
+
+.pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.report .graph,
+.problem .graph {
+  height: 180px;
+}
+.report .history_graph {
+  width: 95%;
+}
+
+.info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info ul li {
+  padding-left: 0;
+}
+
+#placeholder {
+  width: 100%;
+  height: 450px;
+}
+
+#tooltip {
+  position: absolute;
+  display: none;
+  border: 1px solid #fdd;
+  padding: 10px;
+  background-color: #fee;
+  opacity: 0.9;
+}
+
+.tooltip-inner {
+  max-width: 1000px !important;
+}
+
+.form-inline label {
+  display: none;
+}
+
+.showlabel label {
+  display: inline-block;
+}
+
+form .separated > div {
+  padding: 1em 0 0;
+}
+
+table.metric th:nth-child(2) { width: 150px; }
+
+td > div.progress {
+  margin-bottom: 0px;
+}
+
+/* border around nav-stacked just like in boostrap v1 */
+.nav-stacked > li + li {
+  margin-top: -1px
+}
+
+.nav-pills > li > a {
+  padding: 8px;
+  line-height: 18px;
+}
+
+.nav-pills.nav-stacked > li > a {
+  border: 1px solid #DDD;
+  border-radius: 0;
+}
+
+.nav-pills.nav-stacked > li:first-child > a {
+  border-radius: 4px 4px 0px 0px;
+}
+
+.nav-pills.nav-stacked > li:last-child > a {
+  border-radius: 0px 0px 4px 4px;
+}
+
+#date_stats h3 {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+#footer {
+  margin-top: 2em;
+  background: none;
+  text-align: center;
+  font-size: small;
+}
+
+.navbar-pf .navbar-brand {
+    padding: 3px 0px 2px;
+}
+
+.navbar-pf .brand-title {
+  margin-right: 1em;
+}
+
+.navbar-utility > li a .fa {
+  padding-right: 4px;
+}
+
+.input-group .bootstrap-tagsinput {
+  margin-bottom: 0;
+}
+
+tr.stripe {
+  background-color: #f5f5f5;
+}
+
+table.counts-table th:nth-child(2) { width: 150px; }
+
+.three-columns {
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+}
+
+li.empty-line hr {
+  margin: 0.5em 0;
+  width: 50%;
+}
+
+li.empty-line:last-child {
+  display:none;
+}
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.col-1-of-15 {
+  width: 7%;
+}
+
+.col-2-of-15 {
+  width: 13%;
+}
+
+.col-3-of-15 {
+  width: 20%;
+}
+
+.sorting_asc, .sorting_desc {
+    display: table-cell !important;
+}
+
+.dataTables_filter {
+  float: left;
+  margin-left: 5px;
+}
+
+.dataTables_filter label input {
+  margin-left: 8px;
+}
+
+.dataTables_length {
+  float: right;
+}
+
+.paginate_button.current {
+  color: #00618a;
+}
+
+#archive-btn {
+  margin-left: 20px;
+  float: right;
+}
+
+#archive-data {
+  margin-top: 6px;
+  overflow: auto;
+}
+
+.inactive-link {
+  pointer-events: none;
+  cursor: default;
+}
+
+.well-muted {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  border: 1px solid #e3e3e3;
+  border-radius: 1px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+#components-reassign {
+  visibility: hidden;
+}
+
+#comp-assign-info {
+  margin-left: 70px;
+}
+
+#collapse-btn {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-backdrop.fade.in {
+  bottom: 0;
+  z-index: 1000;
+}
+
+/** Changes to typeaheadjs.css **/
+.input-group span.twitter-typeahead {
+  height: inherit;
+}
+/** End of changes to typeaheadjs.css **/

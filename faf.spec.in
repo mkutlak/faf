@@ -77,6 +77,8 @@ BuildRequires: python-munch
 BuildRequires: python-dateutil
 BuildRequires: python2-ratelimitingfilter
 BuildRequires: python-simplejson
+BuildRequires: npm
+
 
 %description
 faf is a programmable tool for analysis of packages, packaging
@@ -99,6 +101,7 @@ Requires: python-munch
 Requires: python-dateutil
 Requires: python2-ratelimitingfilter
 Requires: python-simplejson
+Requires: npm
 
 %description webui
 A WebUI rewrite
@@ -558,8 +561,9 @@ mkdir -p %{buildroot}%{_sysconfdir}/faf/plugins
 mkdir -p %{buildroot}%{_sysconfdir}/faf/templates
 
 # /usr/share
-mkdir -p %{buildroot}%{_datadir}/faf/web/media
 mkdir -p %{buildroot}%{_datadir}/faf/web/static
+mkdir -p %{buildroot}%{_datadir}/faf/web/static/src
+mkdir -p %{buildroot}%{_datadir}/faf/web/static/dist
 
 # /var/spool
 mkdir -p %{buildroot}%{_localstatedir}/spool/faf/
@@ -604,6 +608,13 @@ then
     # alphanumeric string of 50 characters
     RANDOM_STR="$( cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 50 )"
     sed -i "s#@SECRET_KEY@#$RANDOM_STR#g" %{_sysconfdir}/faf/plugins/web.conf
+
+    # build dist
+    pushd %{_datadir}/faf/web/static
+    npm install
+    npm run build-dist
+    npm run clean-modules
+    pop
 fi
 
 %files
@@ -802,18 +813,11 @@ fi
 # /usr/share/faf/
 %dir %{_datadir}/faf/web
 %dir %{_datadir}/faf/web/static
-%dir %{_datadir}/faf/web/static/js
-%dir %{_datadir}/faf/web/static/css
-%dir %{_datadir}/faf/web/static/fonts
-%dir %{_datadir}/faf/web/static/icons
-%{_datadir}/faf/web/static/js/*.js
-%{_datadir}/faf/web/static/fonts/*.otf
-%{_datadir}/faf/web/static/fonts/*.woff
-%{_datadir}/faf/web/static/fonts/*.eot
-%{_datadir}/faf/web/static/fonts/*.svg
-%{_datadir}/faf/web/static/fonts/*.ttf
-%{_datadir}/faf/web/static/css/*.css
-%{_datadir}/faf/web/static/icons/*.png
+%{_datadir}/faf/web/static/gulpfile.js
+%{_datadir}/faf/web/static/package.json
+%{_datadir}/faf/web/static/package-lock.json
+%{_datadir}/faf/web/static/src
+%{_datadir}/faf/web/static/dist
 
 # /var/spool/faf
 %dir %attr(0770, faf, faf) %{_localstatedir}/spool/faf/dumpdirs

@@ -1,0 +1,60 @@
+@import "../../node_modules/patternfly/dist/less/patternfly.less";
+@import "../../node_modules/patternfly/dist/less/patternfly-additions.less";
+@import "../../node_modules/patternfly/dist/less/variables.less";
+
+/* Custom FAF styles */
+
+// define colors for FAF
+@color-faf-lighter-blue: #3474d0;
+@color-faf-blue:         #2a63b4;
+@color-faf-darker-blue:  #34609f;
+@color-faf-dark-blue:    #193b6c;
+@color-faf-light-grey:   #dfdfdf;
+
+// variables.less
+@font-size-base:14px;
+
+// faf color changes to css
+@navbar-pf-bg-color:                               @color-faf-darker-blue;
+@navbar-pf-bg-color-alt:                           @color-faf-dark-blue;
+@navbar-pf-color:                                  @color-faf-light-grey;
+@navbar-pf-navbar-header-border-color:             lighten(@navbar-pf-bg-color-alt, 15%);
+@navbar-pf-navbar-nav-active-active-bg-color:      lighten(@navbar-pf-bg-color-alt, 8%);
+@navbar-pf-navbar-nav-active-active-open-bg-color: lighten(@navbar-pf-bg-color-alt, 11%);
+@navbar-pf-navbar-nav-active-bg-color:             lighten(@navbar-pf-bg-color-alt, 12.5%);
+@navbar-pf-navbar-primary-bg-color-start:          lighten(@navbar-pf-bg-color-alt, 10%); // #474C50
+@navbar-pf-navbar-primary-bg-color-stop:           @navbar-pf-bg-color-alt; // #383F43
+@navbar-pf-navbar-utility-hover-bg-color:          lighten(@navbar-pf-bg-color-alt, 12.5%);
+@btn-primary-bg:                                   @color-faf-darker-blue;
+@btn-primary-bg-img-start:                         @color-faf-lighter-blue;
+@btn-primary-bg-img-stop:                          @color-faf-blue;
+
+// navbar.less
+.navbar-pf {
+  border-top:0;
+  .navbar-brand {
+    &:hover,
+    &:focus {
+      color:@navbar-pf-active-color;
+    }
+  }
+}
+
+@media (min-width: @grid-float-breakpoint) {
+  .navbar-pf {
+    .navbar-utility {
+      > li {
+        > a,
+        > button {
+          border:0;
+        }
+      }
+    }
+  }
+}
+
+//lables.less
+.label {
+  font-size:75%;
+}
+/* End of custom FAF styles */
