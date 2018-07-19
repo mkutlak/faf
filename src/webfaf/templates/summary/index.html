@@ -5,14 +5,8 @@
 {% block title %}Summary{% endblock %}
 
 {% block js %}
-<script src="{{ url_for('static', filename='js/jquery.flot.js')}}"></script>  
-<script src="{{ url_for('static', filename='js/jquery.flot.pie.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.flot.time.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.flot.symbol.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.flot.resize.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.flot.simplelabel.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.flot.axislabels.js')}}"></script>
-<script src="{{ url_for('static', filename='js/report_graph.js')}}"></script>
+<script src="{{ url_for('static', filename='dist/js/jquery.flot.min.js')}}"></script>
+<script src="{{ url_for('static', filename='dist/js/report_graph.min.js')}}"></script>
 {% endblock js %}
 
 {% block body %}

@@ -23,7 +23,7 @@ AC_PROG_CC
 AC_GNU_SOURCE
 AC_PROG_LIBTOOL
 
-AM_PATH_PYTHON([2.6])
+AM_PATH_PYTHON([2.7])
 
 AC_PATH_PROGS(BASH, sh bash)
 
@@ -64,10 +64,11 @@ AC_CONFIG_FILES([
     src/webfaf/Makefile
     src/webfaf/blueprints/Makefile
     src/webfaf/static/Makefile
-    src/webfaf/static/js/Makefile
-    src/webfaf/static/fonts/Makefile
-    src/webfaf/static/icons/Makefile
-    src/webfaf/static/css/Makefile
+    src/webfaf/static/src/Makefile
+    src/webfaf/static/src/js/Makefile
+    src/webfaf/static/src/icons/Makefile
+    src/webfaf/static/src/css/Makefile
+    src/webfaf/static/src/less/Makefile
     src/webfaf/templates/Makefile
     src/webfaf/templates/celery_tasks/Makefile
     src/webfaf/templates/dumpdirs/Makefile

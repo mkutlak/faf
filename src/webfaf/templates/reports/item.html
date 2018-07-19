@@ -16,12 +16,8 @@
 {% endblock %}
 
 {% block js %}
-<script src="{{ url_for('static', filename='js/color.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.flot.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.flot.pie.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.flot.tickrotor.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.flot.time.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.flot.stack.js')}}"></script>
+<script src="{{ url_for('static', filename='dist/js/color.min.js')}}"></script>
+<script src="{{ url_for('static', filename='dist/js/jquery.flot.min.js')}}"></script>
 {% endblock js %}
 
 {% block body %}
