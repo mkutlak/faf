@@ -611,10 +611,16 @@ then
 
     # build dist
     pushd %{_datadir}/faf/web/static
-    npm install
-    npm run build-dist
-    npm run clean-modules
-    pop
+        npm install
+        npm run build-dist
+        npm run clean-modules
+    popd
+fi
+
+%preun webui
+if [ "$1" = 0 ]
+then
+rm -rf %{_datadir}/faf/web/static/dist/
 fi
 
 %files
