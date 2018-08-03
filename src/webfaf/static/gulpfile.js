@@ -28,6 +28,7 @@ var
     flot: [
       './node_modules/flot/jquery.flot.js',
       './node_modules/flot/jquery.flot*.js',
+      './src/js/jquery.flot.tickrotor.js',
       './node_modules/flot-axislabels/jquery.flot.axislabels.js'
     ],
 
