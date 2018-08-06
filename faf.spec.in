@@ -609,18 +609,19 @@ getent passwd faf >/dev/null || useradd --system -g faf -d /etc/faf -s /sbin/nol
 exit 0
 
 %post webui
+# build dist
+pushd %{_datadir}/faf/web/static
+    npm install
+    npm run build-dist
+    npm run clean-modules
+popd
+
 if [ "$1" = 1 ]
 then
     # alphanumeric string of 50 characters
     RANDOM_STR="$( cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 50 )"
     sed -i "s#@SECRET_KEY@#$RANDOM_STR#g" %{_sysconfdir}/faf/plugins/web.conf
 
-    # build dist
-    pushd %{_datadir}/faf/web/static
-        npm install
-        npm run build-dist
-        npm run clean-modules
-    popd
 fi
 
 %preun webui
