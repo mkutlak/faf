@@ -80,8 +80,8 @@ BuildRequires: pg-semver
 BuildRequires: postgresql
 BuildRequires: postgresql-server
 BuildRequires: %{satyr_dep}
-%if %{with python3}
 BuildRequires: createrepo_c
+%if %{with python3}
 BuildRequires: python3
 BuildRequires: python3-devel
 BuildRequires: python3-alembic
@@ -98,7 +98,6 @@ BuildRequires: python3-fedora-messaging
 BuildRequires: python3-pycurl
 BuildRequires: python3-celery >= 3.1
 %else
-BuildRequires: createrepo
 BuildRequires: python
 BuildRequires: python-alembic
 BuildRequires: python-setuptools
