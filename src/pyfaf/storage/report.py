@@ -39,6 +39,7 @@ from . import Package
 from . import Problem
 from . import BzBug
 from . import MantisBug
+from . import Semver
 from . import String
 from . import SymbolSource
 from . import UniqueConstraint
@@ -361,6 +362,8 @@ class ReportUnknownPackage(GenericTable):
     count = Column(Integer, nullable=False)
     report = relationship(Report, backref="unknown_packages")
     arch = relationship(Arch, primaryjoin="Arch.id==ReportUnknownPackage.arch_id")
+    semver = Column(Semver, nullable=False, index=True)  # semantic version
+    semrel = Column(Semver, nullable=False, index=True)  # semantic release
 
     def nvr(self):
         return "{0}-{1}-{2}".format(self.name, self.version, self.release)
