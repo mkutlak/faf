@@ -32,6 +32,7 @@ from . import Enum
 from . import ExternalFafInstance
 from . import ForeignKey
 from . import GenericTable
+from . import Index
 from . import Integer
 from . import OpSysComponent
 from . import OpSysRelease
@@ -362,8 +363,9 @@ class ReportUnknownPackage(GenericTable):
     count = Column(Integer, nullable=False)
     report = relationship(Report, backref="unknown_packages")
     arch = relationship(Arch, primaryjoin="Arch.id==ReportUnknownPackage.arch_id")
-    semver = Column(Semver, nullable=False, index=True)  # semantic version
-    semrel = Column(Semver, nullable=False, index=True)  # semantic release
+    semver = Column(Semver, nullable=False)  # semantic version
+    semrel = Column(Semver, nullable=False)  # semantic release
+    Index("ix_reportunknownpackages_semver_semrel", semver, semrel)
 
     def nvr(self):
         return "{0}-{1}-{2}".format(self.name, self.version, self.release)

@@ -23,6 +23,7 @@ from . import DateTime
 from . import Enum
 from . import ForeignKey
 from . import GenericTable
+from . import Index
 from . import Integer
 from . import ProjRelease
 from . import String
@@ -192,9 +193,10 @@ class Build(GenericTable):
     epoch = Column(Integer, nullable=False, index=True)
     version = Column(String(64), nullable=False, index=True)
     release = Column(String(64), nullable=False, index=True)
-    semver = Column(Semver, nullable=False, index=True)  # semantic version
-    semrel = Column(Semver, nullable=False, index=True)  # semantic release
+    semver = Column(Semver, nullable=False)  # semantic version
+    semrel = Column(Semver, nullable=False)  # semantic release
     projrelease = relationship(ProjRelease)
+    Index("ix_builds_semver_semrel", semver, semrel)
 
     def nvr(self):
         return "{0}-{1}-{2}".format(self.base_package_name, self.version, self.release)
