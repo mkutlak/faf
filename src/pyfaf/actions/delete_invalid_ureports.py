@@ -46,12 +46,13 @@ class DeleteInvalidUReports(Action):
         if cmdline.dry_run:
             self.log_info("Dry run active, removal will be skipped")
         else:
+            invalid_ureports_all = query.yield_per(1000)
             # delete ureport from disk
-            for inv_ureport in query.all():
+            for inv_ureport in invalid_ureports_all():
                 if inv_ureport.has_lob("ureport"):
                     inv_ureport.del_lob("ureport")
             # delete ureports from database
-            query.delete()
+            invalid_ureports_all.delete(False)
         return 0
 
     def tweak_cmdline_parser(self, parser):
