@@ -5,10 +5,10 @@ from pyfaf.queries import get_debug_files
 from pyfaf.rpm import unpack_rpm_to_tmp
 from pyfaf.utils.proc import safe_popen
 
-# Instance of 'RootLogger' has no 'getChildLogger' member
+# Instance of 'RootLogger' has no 'getChild' member
 # Invalid name "log" for type constant
 # pylint: disable-msg=C0103,E1103
-log = log.getChildLogger(__name__)
+log = log.getChild(__name__)
 # pylint: enable-msg=C0103
 
 RE_ADDR2LINE_LINE1 = re.compile(r"^([_0-9a-zA-Z\.~<>@:\*&,\)"
@@ -108,7 +108,7 @@ class RetracePool:
 
         self.name = "RetracePool"
         # pylint: disable-msg=E1103
-        self.log = log.getChildLogger(self.name)
+        self.log = log.getChild(self.name)
         # pylint: enable-msg=E1103
 
         self.db = db
