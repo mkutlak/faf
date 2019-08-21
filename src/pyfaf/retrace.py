@@ -1,6 +1,8 @@
 import re
 import concurrent.futures as futures
-from pyfaf.common import FafError, log
+import logging
+
+from pyfaf.common import FafError, log, LOG_FORMAT_THREAD
 from pyfaf.queries import get_debug_files
 from pyfaf.rpm import unpack_rpm_to_tmp
 from pyfaf.utils.proc import safe_popen
@@ -107,10 +109,7 @@ class RetracePool:
     def __init__(self, db, tasks, problemplugin, workers):
 
         self.name = "RetracePool"
-        # pylint: disable-msg=E1103
-        self.log = log.getChild(self.name)
-        # pylint: enable-msg=E1103
-
+        self.log = _setup_logger()
         self.db = db
         self.plugin = problemplugin
         self.tasks = tasks
@@ -133,6 +132,21 @@ class RetracePool:
                     future.add_done_callback(self._future_done_callback)
                 except RuntimeError as ex:
                     self.log.error("Failed to submit retracing task: {0}".format(str(ex)))
+
+    def _setup_logger(self):
+        """
+        Helper method to set up logging function for threads.
+        Changes the format to show thread names in log messages.
+        """
+        logger = log.getChild(self.name)
+        logger.propagate = False
+
+        hand = logging.StreamHandler()
+        fmtr = logging.Formatter(fmt=LOG_FORMAT_THREAD)
+        hand.setFormatter(fmtr)
+        logger.addHandler(hand)
+
+        return logger
 
     def _process_task(self, task, num):
         """
