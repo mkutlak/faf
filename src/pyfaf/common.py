@@ -22,7 +22,7 @@ import os
 import pwd
 import re
 import tempfile
-from pyfaf.config import config
+from pyfaf.config import config, log_config
 
 __all__ = ["FafError",
            "Plugin",
@@ -32,19 +32,13 @@ __all__ = ["FafError",
            "load_plugin_types",
            "log",
            "get_connect_string",
-           "LOG_FORMAT",
-           "LOG_FORMAT_THREAD",
           ]
 
 RE_PLUGIN_NAME = re.compile(r"^[a-zA-Z0-9\-]+$")
 
-LOG_FORMAT = "[%(asctime)s] %(levelname)s:%(name)s: %(message)s"
-LOG_FORMAT_THREAD = "[%(asctime)s] %(levelname)s:%(name)s(%threadName)s: %(message)s"
-
-DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
-
 # Initialize common logging
-logging.basicConfig(format=LOG_FORMAT, datefmt=DATE_FORMAT)
+#logging.basicConfig(format=LOG_FORMAT, datefmt=DATE_FORMAT)
+logging.config.fileConfig(log_config)
 
 # Invalid name "log" for type constant
 # pylint: disable-msg=C0103

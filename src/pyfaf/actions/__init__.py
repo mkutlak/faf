@@ -101,6 +101,5 @@ class Action(Plugin):
         else:
             self.log_info("Package does not have a LOB. Skipping.")
 
-
 import_dir(__name__, os.path.dirname(__file__))
 load_plugins(Action, actions)

@@ -22,12 +22,14 @@ import logging
 
 from pyfaf.local import etc, var
 
-__all__ = ["config"]
+__all__ = ["config", "log_config"]
 
 MAIN_CONFIG_DIR = os.path.join(etc, "faf")
 MAIN_CONFIG_FILE = "faf.conf"
+MAIN_LOG_CONFIG_FILE = "faf-logging.conf"
 CONFIG_FILE_SUFFIX = ".conf"
 CONFIG_FILE_ENV_VAR = "FAF_CONFIG_FILE"
+CONFIG_LOG_FILE_ENV_VAR = "FAF_LOG_CONFIG_FILE"
 CONFIG_CHILD_SECTIONS = ["main.pluginsdir"]
 
 
@@ -87,6 +89,22 @@ def load_config():
 
     return result
 
+def load_log_config():
+    """
+    Load main config file for logging.
+    """
+    main_log_config_file = os.path.join(MAIN_CONFIG_DIR, MAIN_LOG_CONFIG_FILE)
+
+    if CONFIG_LOG_FILE_ENV_VAR in os.environ:
+        fpath = os.environ[CONFIG_LOG_FILE_ENV_VAR]
+        if os.access(fpath, os.R_OK):
+            main_log_config_file = fpath
+        else:
+            logging.error("Config file specified by %s environment variable"
+                          " (%s) not found or unreadable", CONFIG_LOG_FILE_ENV_VAR, fpath)
+
+     return main_log_config_file
+
 
 def load_paths(conf):
     """
@@ -125,6 +143,7 @@ def load_paths(conf):
 # Invalid name "config" for type constant
 # pylint: disable-msg=C0103
 config = load_config()
+log_config = load_log_config()
 
 # populate paths
 paths = load_paths(config)
