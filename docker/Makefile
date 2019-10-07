@@ -18,6 +18,11 @@ run:
 run_local:
 	docker run --name faf -dit -e PGHOST=$(DB_IP) -e PGUSER=faf -e PGPASSWORD=scrt -e PGPORT=5432 -e PGDATABASE=faf -e RDSBROKER=redis://faf-redis:6379/0 -e RDSBACKEND=redis://faf-redis:6379/0 -p 8080:8080 faf-image-local
 
+run_redis: network
+	docker run --name faf-redis --hostname faf-redis -dit -p 6379:6379 redis
+	docker network connect faf-network faf ||:
+	docker network connect faf-network faf-redis ||:
+
 # When running as docker containers and need persistent storage, do this for the first time
 # mkdir /var/tmp/data
 # chown 26:26 /var/tmp/data
@@ -33,3 +38,6 @@ sh:
 
 del:
 	docker rm -f faf
+
+network:
+	docker network create faf-network ||:
