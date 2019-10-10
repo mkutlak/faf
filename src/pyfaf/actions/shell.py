@@ -54,6 +54,8 @@ class Shell(Action):
             return session.query(obj).order_by(func.random()).first()
 
         try:
+            # Import outside toplevel (IPython)
+            # pylint: disable=import-outside-toplevel
             import IPython
         except ImportError:
             print('IPython required')
