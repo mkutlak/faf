@@ -21,6 +21,10 @@ persistent=yes
 # usually to register additional checkers.
 load-plugins=
 
+# A comma-separated list of package or module names from where C extensions may be loaded.
+# Extensions are loading into the active Python interpreter and may run arbitrary code.
+extension-pkg-whitelist=satyr
+
 
 [MESSAGES CONTROL]
 
@@ -38,7 +42,7 @@ load-plugins=
 # W0201 = Attribute defined outside __init__
 # R0201 = Method could be a function
 # useless-object-inheritance - We need this if we want to support Python2
-disable=W0141,W0201,R0201,too-few-public-methods,invalid-name,missing-docstring,superfluous-parens,duplicate-code,useless-object-inheritance
+disable=W0141,W0201,R0201,too-few-public-methods,invalid-name,missing-docstring,superfluous-parens,duplicate-code,useless-object-inheritance,c-extension-no-member
 
 [REPORTS]
 
