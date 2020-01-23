@@ -42,10 +42,22 @@ class GenericTableBase(object):
             if ex.errno != errno.EEXIST:
                 raise
 
+        if self.pkg_type:
+            pkstr = "{0}{1}".format(pkstr, self.pkg_type)
+
         return os.path.join(lobdir, pkstr)
 
     def has_lob(self, name):
-        return os.path.isfile(self.get_lob_path(name))
+        if os.path.isfile(self.get_lob_path(name)):
+            return True
+
+        # Backwards compatibility for old way of storing Package lobs.
+        # The old Package lobs were stored as files name after primary key only (01, 02),
+        # updated version adds pkgtype to the name (01.rpm, 02.rpm).
+        if self.pkg_type:
+            return os.path.isfile(self.get_lob_path(name)[:len(self.pkg_type)])
+
+        return False
 
     # lob for Large OBject
     # in DB: blob = Binary Large OBject, clob = Character Large OBject
@@ -67,6 +79,10 @@ class GenericTableBase(object):
         lobpath = self.get_lob_path(name)
 
         if not os.path.isfile(lobpath):
+            if self.pkg_type:
+                if os.path.isfile(lobpath[:len(self.pkg_type)]):
+                    lobpath = lobpath[:len(self.pkg_type)]
+
             return None
 
         mode = "r"
@@ -127,8 +143,20 @@ class GenericTableBase(object):
         lobpath = self.get_lob_path(name)
 
         if not os.path.isfile(lobpath):
+            if self.pkgtype:
+                lobpath = lobpath[:len(self.pkg_type)]
+
+        if not os.path.isfile(lobpath):
             raise FafError("Lob '{0}' does not exist".format(name))
 
         os.unlink(lobpath)
+
+    @property
+    def pkg_type(self):
+        if hasattr(self, "pkgtype"):
+            return "." + self.pkgtype
+
+        return None
+
 
 GenericTable = declarative_base(cls=GenericTableBase)
