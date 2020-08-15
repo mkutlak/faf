@@ -1,0 +1,51 @@
+# Generation of Kubernetes YAML is still under development!
+#
+# Save the output of this file and use kubectl create -f to import
+# it into Kubernetes.
+#
+# Created with podman-2.0.4
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2020-08-15T16:49:39Z"
+  labels:
+    app: faf-pod
+  name: faf-pod
+spec:
+  containers:
+  - name: faf
+    env:
+    - name: PGPORT
+      value: "5432"
+    - name: PGPASSWORD
+      value: scrt
+    - name: PGUSER
+      value: faf
+    - name: PGDATABASE
+      value: faf
+    - name: RDSBACKEND
+      value: redis://faf-pod:6379/0
+    - name: RDSBROKER
+      value: redis://faf-pod:6379/0
+    - name: PGHOST
+      value: faf-pod
+    image: abrt/faf
+    ports:
+    - containerPort: 8080
+      hostPort: 8080
+      protocol: TCP
+  - name: faf-redis
+    image: redis
+    ports:
+    - containerPort: 6379
+      hostPort: 6379
+      protocol: TCP
+  - name: faf-db
+    env:
+    - name: POSTGRESQL_ADMIN_PASSWORD
+      value: NotSoSecretPassword
+    image: abrt/faf-db
+    ports:
+    - containerPort: 5432
+      hostPort: 5432
+      protocol: TCP
